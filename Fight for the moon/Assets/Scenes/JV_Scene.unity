@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733cda6c28676ff4297ed42e9124333d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 2
+  RotateSpeed: 1
   Radius: 5
   spacebetween: 9.9
 --- !u!212 &141298670
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 10
+  jumpForce: 7.5
   Player1: {fileID: 0}
 --- !u!212 &470895465
 SpriteRenderer:
@@ -5173,7 +5173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733cda6c28676ff4297ed42e9124333d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 2
+  RotateSpeed: 1
   Radius: 5
   spacebetween: 1
 --- !u!212 &676619030
@@ -5408,7 +5408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 10
+  jumpForce: 7.5
   Player1: {fileID: 0}
 --- !u!212 &1622809888
 SpriteRenderer:
