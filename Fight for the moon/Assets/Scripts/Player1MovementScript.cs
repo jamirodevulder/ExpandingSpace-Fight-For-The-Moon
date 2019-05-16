@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1MovementScript : MonoBehaviour
+public class Player2MovementScript : MonoBehaviour
 {
     public float speed = 5;
     public float jumpForce = 10;
@@ -12,6 +12,29 @@ public class Player1MovementScript : MonoBehaviour
     void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        AreaEffector2D area = GetComponent<AreaEffector2D>();
+        area.forceMagnitude = (666);
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            area.forceMagnitude = 1000f;
+        }
+        else
+        {
+            area.forceMagnitude = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            area.forceAngle = 135f;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            area.forceAngle = 45f;
+        }
     }
 
     // Update is called once per frame
