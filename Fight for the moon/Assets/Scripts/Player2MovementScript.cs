@@ -2,18 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2MovementScript : MonoBehaviour {
+public class Player1MovementScript : MonoBehaviour
+{
     public float speed = 5;
     public float jumpForce = 10;
     bool grounded;
     public Rigidbody2D Player1;
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 		
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void Update()
+    {
+        AreaEffector2D area = GetComponent<AreaEffector2D>();
+        area.forceMagnitude = (666);
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            area.forceMagnitude = 1000f;
+        }
+        else
+        {
+            area.forceMagnitude = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            area.forceAngle = 135f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            area.forceAngle = 45f;
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate ()
+    {
         if (Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
