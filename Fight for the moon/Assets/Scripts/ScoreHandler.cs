@@ -10,7 +10,7 @@ public class ScoreHandler : MonoBehaviour {
     public Text scoreplayer2;
     public void addScore(GameObject playerThatDied)
     {
-        if (playerThatDied.name == "player2")
+        if (playerThatDied.name == "player1")
         {
             scorePlayer2++;
             scoreplayer2.text = scorePlayer2.ToString();
