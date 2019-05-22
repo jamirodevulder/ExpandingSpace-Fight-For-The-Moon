@@ -8,19 +8,26 @@ public class Player1MovementScript : MonoBehaviour
     public float jumpForce = 10;
     bool grounded;
     public Rigidbody2D Player1;
+    private Animator animator;
     // Use this for initialization
     void Start ()
     {
-		
+        animator = GetComponent<Animator>();
 	}
 
     private void Update()
     {
         AreaEffector2D area = GetComponent<AreaEffector2D>();
         BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && grounded)
         {
             area.forceMagnitude = 1000f;
+            animator.SetTrigger("PushGround");
+        }
+        else if(Input.GetKeyDown(KeyCode.S) && !grounded)
+        {
+            area.forceMagnitude = 1000f;
+            animator.SetTrigger("PushAir");
         }
         else
         {
@@ -30,12 +37,20 @@ public class Player1MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             area.forceAngle = 135f;
-            pushCollider.offset = new Vector2(0.25f, 0f);
+            pushCollider.offset = new Vector2(-0.1f, 0f);
+            animator.SetBool("Walk", true);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             area.forceAngle = 45f;
-            pushCollider.offset = new Vector2(0.25f, 0f);
+            pushCollider.offset = new Vector2(0.1f, 0f);
+            animator.SetBool("Walk", true);
+        }
+
+
+        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A) )
+        {
+            animator.SetBool("Walk", false);
         }
     }
 
@@ -45,15 +60,18 @@ public class Player1MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         if (Input.GetKeyDown(KeyCode.W) && grounded)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             grounded = false;
+            animator.SetBool("Jump", true);
         }
     }
 
@@ -63,6 +81,7 @@ public class Player1MovementScript : MonoBehaviour
         {
             //Debug.Log("Touch ground!");
             grounded = true;
+            animator.SetBool("Jump", false);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -71,6 +90,7 @@ public class Player1MovementScript : MonoBehaviour
         {
             //Debug.Log("Exit ground!");
             grounded = false;
+            animator.SetBool("Jump", true);
         }
     }
 }
