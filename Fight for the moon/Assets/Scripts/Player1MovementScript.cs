@@ -17,7 +17,7 @@ public class Player2MovementScript : MonoBehaviour
     private void Update()
     {
         AreaEffector2D area = GetComponent<AreaEffector2D>();
-        area.forceMagnitude = (666);
+        BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             area.forceMagnitude = 1000f;
@@ -30,10 +30,12 @@ public class Player2MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             area.forceAngle = 135f;
+            pushCollider.offset = new Vector2(-0.25f,0f);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             area.forceAngle = 45f;
+            pushCollider.offset = new Vector2(0.25f, 0f);
         }
     }
 
