@@ -5877,11 +5877,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4901034611707360, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11.31
+      value: 11.4
       objectReference: {fileID: 0}
     - target: {fileID: 4901034611707360, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.442066
+      value: -8.09
       objectReference: {fileID: 0}
     - target: {fileID: 4901034611707360, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6002,11 +6002,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.85
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.442066
+      value: -7.13
       objectReference: {fileID: 0}
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6039,6 +6039,21 @@ Prefab:
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61739854321689238, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 61739854321689238, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 61739854321689238, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
