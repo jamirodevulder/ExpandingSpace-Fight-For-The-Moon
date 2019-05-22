@@ -41,8 +41,8 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
     IEnumerator startnextround()
     {
        yield return new WaitForSeconds(1f);
-        player1.transform.localScale = new Vector3(5, 5, 0);
-        player2.transform.localScale = new Vector3(5, 5, 0);
+        player1.transform.localScale = new Vector3(8, 8, 0);
+        player2.transform.localScale = new Vector3(8, 8, 0);
         player2.transform.position = new Vector3(13, -8, 0);
         player1.transform.position = new Vector3(-13, -8, 0);
         player = null;
