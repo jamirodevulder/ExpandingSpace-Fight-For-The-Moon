@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/JV_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/KC_Start.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 6b579cb318d5d9d4eb98beeab311f8c9
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 0359db18883ae554687da09618fe42d5
+  - enabled: 1
+    path: Assets/Scenes/CombatScene39420.unity
+    guid: a0ab0f89a608686498e516bb34500a4d
   m_configObjects: {}

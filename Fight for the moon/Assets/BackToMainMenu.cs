@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class multiscript0 : MonoBehaviour {
-
+using UnityEngine.UI;
+public class BackToMainMenu : MonoBehaviour {
+    public Button button;
 	// Use this for initialization
 	void Start () {
-		
+        button.onClick.AddListener(backtomainmenu);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-    public void StartLevel()
+
+    public void backtomainmenu()
     {
-        SceneManager.LoadScene("Game");
-    }
-    public void StartCredits()
-    {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("MainMenu");
     }
 }
