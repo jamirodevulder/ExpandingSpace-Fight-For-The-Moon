@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class multiscript0 : MonoBehaviour {
-
+     public GameObject pauzescherm;
+    public GameObject tandwiel;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,8 +19,31 @@ public class multiscript0 : MonoBehaviour {
     {
         SceneManager.LoadScene("Game");
     }
+    public void ToControlls()
+    {
+        SceneManager.LoadScene("Controlls");
+    }
     public void StartCredits()
     {
         SceneManager.LoadScene("Credits");
+    }
+    public void BackMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void Resume()
+    {
+        GameObject.Find("player1").GetComponent<Player1MovementScript>().enabled = true;
+        GameObject.Find("player2").GetComponent<Player2MovementScript>().enabled = true;
+        pauzescherm.SetActive(false);
+        tandwiel.GetComponent<escapePauzeScript>().setEscPressed(false);
+
+    }
+    public void Pauze()
+    {
+        GameObject.Find("player1").GetComponent<Player1MovementScript>().enabled = false;
+        GameObject.Find("player2").GetComponent<Player2MovementScript>().enabled = false;
+        pauzescherm.SetActive(true);
+        tandwiel.GetComponent<escapePauzeScript>().setEscPressed(false);
     }
 }

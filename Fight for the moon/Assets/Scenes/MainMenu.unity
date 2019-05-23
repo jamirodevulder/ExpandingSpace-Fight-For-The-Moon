@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauzescherm: {fileID: 0}
+  tandwiel: {fileID: 0}
 --- !u!1 &320988826
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1782302753}
-        m_MethodName: StartLevel
+        m_MethodName: ToControlls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -809,3 +811,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauzescherm: {fileID: 0}
+  tandwiel: {fileID: 0}

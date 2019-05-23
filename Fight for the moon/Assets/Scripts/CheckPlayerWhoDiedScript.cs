@@ -17,6 +17,7 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
             hit = true;
             GameObject.Find("Canvas").GetComponent<ScoreHandler>().addScore(collision.gameObject);
             player = collision.gameObject;
+            GetComponent<AudioSource>().Play();
         }
         
     }
@@ -42,6 +43,7 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
 
     IEnumerator startnextround()
     {
+       
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         yield return new WaitForSeconds(1f);
         player1.transform.localScale = new Vector3(8, 8, 0);
