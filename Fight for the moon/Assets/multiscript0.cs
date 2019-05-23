@@ -46,4 +46,8 @@ public class multiscript0 : MonoBehaviour {
         pauzescherm.SetActive(true);
         tandwiel.GetComponent<escapePauzeScript>().setEscPressed(false);
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
