@@ -27,6 +27,8 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
         if (player != null && player.transform.localScale.x > 0)
         {
             player.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            
         }
         else if (player != null && player.transform.localScale.x <= 0 && !next)
         {
@@ -40,11 +42,12 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
 
     IEnumerator startnextround()
     {
-       yield return new WaitForSeconds(1f);
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        yield return new WaitForSeconds(1f);
         player1.transform.localScale = new Vector3(8, 8, 0);
         player2.transform.localScale = new Vector3(8, 8, 0);
-        player2.transform.position = new Vector3(13, -8, 0);
-        player1.transform.position = new Vector3(-13, -8, 0);
+        player2.transform.position = new Vector3(13, -7.5f, -4.99f);
+        player1.transform.position = new Vector3(-13, -7.5f, -4.99f);
         player = null;
         next = false;
         hit = false;

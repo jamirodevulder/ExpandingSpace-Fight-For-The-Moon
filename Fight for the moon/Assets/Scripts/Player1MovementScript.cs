@@ -7,8 +7,8 @@ public class Player2MovementScript : MonoBehaviour
     public float speed = 5;
     public float jumpForce = 10;
     bool grounded;
-    public Rigidbody2D Player1;
     private Animator animator;
+    public GameObject landAnimation;
 
     // Use this for initialization
     void Start()
@@ -55,6 +55,7 @@ public class Player2MovementScript : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
+      
     }
 
     // Update is called once per frame
@@ -83,6 +84,8 @@ public class Player2MovementScript : MonoBehaviour
             //Debug.Log("Touch ground!");
             grounded = true;
             animator.SetBool("Jump", false);
+            landAnimation.SetActive(true);
+            landAnimation.GetComponent<Animator>().SetTrigger("Hitground");
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

@@ -6,19 +6,21 @@ using UnityEngine.UI;
 public class ScoreHandler : MonoBehaviour {
     private int scorePlayer2 = 0;
     private int scorePlayer1 = 0;
-    public Text scoreplayer1;
-    public Text scoreplayer2;
+    public Image scoreplayer1;
+    public Image scoreplayer2;
+    public Image[] score;
     public void addScore(GameObject playerThatDied)
     {
         if (playerThatDied.name == "player1")
         {
             scorePlayer2++;
-            scoreplayer2.text = scorePlayer2.ToString();
+            scoreplayer2.GetComponent<Image>().sprite = score[scorePlayer2].GetComponent<Image>().sprite;
         }
         else
         {
             scorePlayer1++;
-            scoreplayer1.text = scorePlayer1.ToString();
+            scoreplayer1.GetComponent<Image>().sprite = score[scorePlayer1].GetComponent<Image>().sprite;
+
         }
     }
 
