@@ -15,6 +15,7 @@ public class ScoreHandler : MonoBehaviour {
         {
             scorePlayer2++;
             scoreplayer2.GetComponent<Image>().sprite = score[scorePlayer2].GetComponent<Image>().sprite;
+
         }
         else
         {

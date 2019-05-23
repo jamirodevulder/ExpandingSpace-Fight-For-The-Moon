@@ -4,12 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour {
-    public Text timer;
+    public Image timer;
     public GameObject player1;
     public GameObject player2;
+    public Image[] counter;
+    public GameObject countdown;
+    
+    
 	// Use this for initialization
 	void Start () {
+        countdown.SetActive(true);
         StartCoroutine(startTimer());
+         
         
 	}
 	
@@ -20,15 +26,15 @@ public class GameHandler : MonoBehaviour {
     {
         player1.GetComponent<Player1MovementScript>().enabled = false;
         player2.GetComponent<Player2MovementScript>().enabled = false;
-        timer.text = "3";
+        timer.GetComponent<Image>().sprite = counter[0].GetComponent<Image>().sprite;
         yield return new WaitForSeconds(1);
-        timer.text = "2";
+        timer.GetComponent<Image>().sprite = counter[1].GetComponent<Image>().sprite;
         yield return new WaitForSeconds(1);
-        timer.text = "1";
+        timer.GetComponent<Image>().sprite = counter[2].GetComponent<Image>().sprite;
         yield return new WaitForSeconds(1);
-        timer.text = "GO!";
+        timer.GetComponent<Image>().sprite = counter[3].GetComponent<Image>().sprite;
         yield return new WaitForSeconds(0.5f);
-        timer.text = "";
+        countdown.SetActive(false);
         player1.GetComponent<Player1MovementScript>().enabled = true;
         player2.GetComponent<Player2MovementScript>().enabled = true;
     }

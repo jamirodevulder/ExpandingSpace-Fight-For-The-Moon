@@ -6,6 +6,7 @@ public class Player1MovementScript : MonoBehaviour
 {
     public float speed = 5;
     public float jumpForce = 10;
+ 
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
@@ -39,18 +40,21 @@ public class Player1MovementScript : MonoBehaviour
             area.forceAngle = 135f;
             pushCollider.offset = new Vector2(-0.1f, 0f);
             animator.SetBool("Walk", true);
+    
         }
         else if (Input.GetKey(KeyCode.D))
         {
             area.forceAngle = 45f;
             pushCollider.offset = new Vector2(0.1f, 0f);
             animator.SetBool("Walk", true);
+       
         }
 
 
         if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A) )
         {
             animator.SetBool("Walk", false);
+            
         }
     }
 
