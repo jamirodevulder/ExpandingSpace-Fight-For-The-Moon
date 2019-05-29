@@ -6,7 +6,7 @@ public class Player1MovementScript : MonoBehaviour
 {
     public float speed = 5;
     public float jumpForce = 10;
-    public float firstSpeed;
+    private float firstSpeed = 50;
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
