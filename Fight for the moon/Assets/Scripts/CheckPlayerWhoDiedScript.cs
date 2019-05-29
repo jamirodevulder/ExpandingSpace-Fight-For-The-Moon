@@ -25,6 +25,10 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
 
     private void Update()
     {
+        if(transform.localScale.x < 1 && transform.localScale.y < 1)
+        {
+            transform.localScale += new Vector3(0.01F, 0.01F, 0);
+        }
         if (player != null && player.transform.localScale.x > 0)
         {
             player.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
