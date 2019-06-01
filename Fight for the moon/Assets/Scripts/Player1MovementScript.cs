@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player1MovementScript : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Player1MovementScript : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+       
     }
 
     private void Update()
@@ -84,6 +86,8 @@ public class Player1MovementScript : MonoBehaviour
             grounded = false;
             animator.SetBool("Jump", true);
         }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -104,8 +108,13 @@ public class Player1MovementScript : MonoBehaviour
             //Debug.Log("Exit ground!");
             grounded = false;
             animator.SetBool("Jump", true);
+           
+            
         }
+        
     }
+    
+    
 }
 //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 //transform.position -= new Vector3(+speed, 0, 0) * Time.deltaTime;
