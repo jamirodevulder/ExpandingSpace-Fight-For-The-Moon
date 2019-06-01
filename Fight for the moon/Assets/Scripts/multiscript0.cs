@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class multiscript0 : MonoBehaviour {
      public GameObject pauzescherm;
     public GameObject tandwiel;
+    public GameObject MainMenu;
+    public GameObject ControllScreenObject;
+    public GameObject CreditsScreenObject;
+    public GameObject backgroundImage;
+    public Image ControllScreen;
+    public Image CreditsScreen;
+    public Image MainMenuImage;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,15 +29,23 @@ public class multiscript0 : MonoBehaviour {
     }
     public void ToControlls()
     {
-        SceneManager.LoadScene("Controlls");
+        MainMenu.SetActive(false);
+        backgroundImage.GetComponent<Image>().sprite = ControllScreen.sprite;
+        ControllScreenObject.SetActive(true);
+
     }
     public void StartCredits()
     {
-        SceneManager.LoadScene("Credits");
+        MainMenu.SetActive(false);
+        backgroundImage.GetComponent<Image>().sprite = CreditsScreen.sprite;
+        CreditsScreenObject.SetActive(true);
+
+
     }
     public void BackMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+
     }
     public void Resume()
     {
@@ -45,6 +61,12 @@ public class multiscript0 : MonoBehaviour {
         GameObject.Find("player2").GetComponent<Player2MovementScript>().enabled = false;
         pauzescherm.SetActive(true);
         tandwiel.GetComponent<escapePauzeScript>().setEscPressed(false);
+    }
+    public void BackFromCredits()
+    {
+        CreditsScreenObject.SetActive(false);
+        backgroundImage.GetComponent<Image>().sprite = MainMenuImage.sprite;
+        MainMenu.SetActive(true);
     }
     public void Exit()
     {
