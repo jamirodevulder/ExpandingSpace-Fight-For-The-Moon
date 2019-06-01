@@ -16,19 +16,30 @@ public class Player1MovementScript : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+<<<<<<< HEAD
        
+=======
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
     }
 
     private void Update()
     {
         AreaEffector2D area = GetComponent<AreaEffector2D>();
         BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.S) && grounded)
+=======
+        if (Input.GetKeyDown(KeyCode.DownArrow) && grounded)
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         {
             area.forceMagnitude = 1000f;
             animator.SetTrigger("PushGround");
         }
+<<<<<<< HEAD
         else if (Input.GetKeyDown(KeyCode.S) && !grounded)
+=======
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && !grounded)
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         {
             area.forceMagnitude = 1000f;
             animator.SetTrigger("PushAir");
@@ -51,6 +62,7 @@ public class Player1MovementScript : MonoBehaviour
             pushCollider.offset = new Vector2(0.1f, 0f);
             GetComponent<SpriteRenderer>().flipX = true;
             animator.SetBool("Walk", true);
+<<<<<<< HEAD
         }
 
 
@@ -58,6 +70,15 @@ public class Player1MovementScript : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
+=======
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.SetBool("Walk", false);
+        }
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
       
     }
 
@@ -108,8 +129,11 @@ public class Player1MovementScript : MonoBehaviour
             //Debug.Log("Exit ground!");
             grounded = false;
             animator.SetBool("Jump", true);
+<<<<<<< HEAD
            
             
+=======
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         }
         
     }

@@ -6,8 +6,12 @@ public class Player2MovementScript : MonoBehaviour
 {
     public float speed = 5;
     public float jumpForce = 10;
+<<<<<<< HEAD
     private float firstSpeed = 50;
 
+=======
+ 
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
@@ -21,12 +25,20 @@ public class Player2MovementScript : MonoBehaviour
     {
         AreaEffector2D area = GetComponent<AreaEffector2D>();
         BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.DownArrow) && grounded)
+=======
+        if (Input.GetKeyDown(KeyCode.S) && grounded)
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         {
             area.forceMagnitude = 1000f;
             animator.SetTrigger("PushGround");
         }
+<<<<<<< HEAD
         else if(Input.GetKeyDown(KeyCode.DownArrow) && !grounded)
+=======
+        else if(Input.GetKeyDown(KeyCode.S) && !grounded)
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         {
             area.forceMagnitude = 1000f;
             animator.SetTrigger("PushAir");
@@ -52,7 +64,11 @@ public class Player2MovementScript : MonoBehaviour
         }
 
 
+<<<<<<< HEAD
         if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow) )
+=======
+        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A) )
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         {
             animator.SetBool("Walk", false);
             
@@ -66,21 +82,27 @@ public class Player2MovementScript : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
             GetComponent<SpriteRenderer>().flipX = true;
+<<<<<<< HEAD
             if(GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
             }
           
+=======
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
             GetComponent<SpriteRenderer>().flipX = false;
+<<<<<<< HEAD
             if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
             }
 
+=======
+>>>>>>> 4c76668e3099a5a92c2d9b6a8eccc7a5e2863687
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
