@@ -11,6 +11,7 @@ public class Player1MovementScript : MonoBehaviour
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
+    private bool pushwolkje = false;
 
     // Use this for initialization
     void Start()
@@ -113,8 +114,28 @@ public class Player1MovementScript : MonoBehaviour
         }
         
     }
-    
-    
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "player2")
+        {
+            if(Input.GetKeyDown(KeyCode.S) && !pushwolkje)
+            {
+                GameObject.Find("pushwolkjeP1").SetActive(true);
+                GameObject.Find("pushwolkjeP1").GetComponent<Animator>().SetTrigger("pushwolkje");
+                pushwolkje = true;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "player2")
+        {
+               
+                pushwolkje = false;
+            
+        }
+    }
 }
 //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 //transform.position -= new Vector3(+speed, 0, 0) * Time.deltaTime;
