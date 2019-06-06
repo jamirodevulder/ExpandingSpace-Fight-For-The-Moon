@@ -349,6 +349,7 @@ MonoBehaviour:
   RotateSpeed: 1
   Radius: 5
   spacebetween: 9.9
+  blackholename: blackhole
 --- !u!212 &141298670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +914,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauzescherm: {fileID: 723953618}
   tandwiel: {fileID: 2103336256}
+  MainMenu: {fileID: 0}
+  ControllScreenObject: {fileID: 0}
+  CreditsScreenObject: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  ControllScreen: {fileID: 0}
+  CreditsScreen: {fileID: 0}
+  MainMenuImage: {fileID: 0}
 --- !u!114 &570688442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,6 +1315,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauzescherm: {fileID: 723953618}
   tandwiel: {fileID: 2103336256}
+  MainMenu: {fileID: 0}
+  ControllScreenObject: {fileID: 0}
+  CreditsScreenObject: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  ControllScreen: {fileID: 0}
+  CreditsScreen: {fileID: 0}
+  MainMenuImage: {fileID: 0}
 --- !u!1 &676619028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1354,7 @@ MonoBehaviour:
   RotateSpeed: 1
   Radius: 5
   spacebetween: 1
+  blackholename: blackhole
 --- !u!212 &676619030
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1764,8 +1780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484437a19d0757743991579cc39015d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 1849096660}
-  player2: {fileID: 410786275}
 --- !u!95 &809777909
 Animator:
   serializedVersion: 3
@@ -3184,6 +3198,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauzescherm: {fileID: 723953618}
   tandwiel: {fileID: 2103336256}
+  MainMenu: {fileID: 0}
+  ControllScreenObject: {fileID: 0}
+  CreditsScreenObject: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  ControllScreen: {fileID: 0}
+  CreditsScreen: {fileID: 0}
+  MainMenuImage: {fileID: 0}
 --- !u!114 &2103336263
 MonoBehaviour:
   m_ObjectHideFlags: 0
