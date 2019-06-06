@@ -7,6 +7,7 @@ public class RotateAround : MonoBehaviour {
     public float RotateSpeed;
     public float Radius;
     public float spacebetween;
+    public string blackholename;
 
 
     private Vector2 _centre;
@@ -14,7 +15,7 @@ public class RotateAround : MonoBehaviour {
 
     private void Start()
     {
-        _centre = GameObject.Find("blackhole").transform.position;
+        _centre = GameObject.Find(blackholename).transform.position;
     }
 
     private void Update()

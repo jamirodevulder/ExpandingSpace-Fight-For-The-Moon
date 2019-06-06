@@ -18,7 +18,7 @@ public class ScoreHandler : MonoBehaviour {
     }
     public void addScore(GameObject playerThatDied)
     {
-        if (playerThatDied.name == "player1")
+        if (playerThatDied.name == "player1" || playerThatDied.name == "blackholeP1")
         {
             scorePlayer2++;
             scoreplayer2.GetComponent<Image>().sprite = score[scorePlayer2].GetComponent<Image>().sprite;
