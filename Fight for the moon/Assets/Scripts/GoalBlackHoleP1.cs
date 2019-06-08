@@ -8,6 +8,9 @@ public class GoalBlackHoleP1 : MonoBehaviour {
     private bool hit = false;
     public Vector3 ballposition;
     private GameObject player;
+    private GameObject player1;
+    private GameObject player2;
+    private GameObject ball;
     // Use this for initialization
     void Start () {
 		
@@ -22,10 +25,21 @@ public class GoalBlackHoleP1 : MonoBehaviour {
         {
             GameObject.Find("Canvas").GetComponent<ScoreHandler>().addScore(this.gameObject);
         }
-            
-        
+
+        if (collision.gameObject.name == "player1")
+        {
+            player1 = collision.gameObject;
+        }
+        else if (collision.gameObject.name == "player2")
+        {
+            player2 = collision.gameObject;
+        }
+        else if(collision.gameObject.name == "ball")
+        {
+            ball = collision.gameObject;
+        }
+
         GetComponent<AudioSource>().Play();
-        player = collision.gameObject;
         StartCoroutine(startnextround(collision.gameObject));
         
         
@@ -42,10 +56,17 @@ public class GoalBlackHoleP1 : MonoBehaviour {
             player.transform.localScale -= new Vector3(scalespeed, scalespeed, 0);
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        else if(player != null && player.transform.localScale.x > 0)
+        if (player1 != null && player1.transform.localScale.x > 0)
         {
-            player.transform.localScale -= new Vector3(0.1f, 0.1f, 0);
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            player1.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+            player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+        }
+        if (player2 != null && player2.transform.localScale.x > 0)
+        {
+            player2.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+            player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         }
     }
 
@@ -71,6 +92,18 @@ public class GoalBlackHoleP1 : MonoBehaviour {
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             Player.transform.localScale = new Vector3(0.5f, 0.5f, 0);
             Player.transform.position = ballposition;
+        }
+        if (Player.name == "player1")
+        {
+            player1 = null;
+        }
+        else if (Player.name == "player2")
+        {
+            player2 = null;
+        }
+        else if(Player.name == "ball")
+        {
+            ball = null;
         }
         Player = null;
         player = null;

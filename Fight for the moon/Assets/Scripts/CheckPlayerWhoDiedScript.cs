@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPlayerWhoDiedScript : MonoBehaviour {
+    private GameObject player1;
+    private GameObject player2;
     private GameObject player;
     private bool next = false;
     private bool hit = false;
@@ -11,9 +13,18 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GetComponent<AudioSource>().Play();
-        player = collision.gameObject;
-        StartCoroutine(startnextround(collision.gameObject));
-        GameObject.Find("Canvas").GetComponent<ScoreHandler>().addScore(player);
+        if (collision.gameObject.name == "player1")
+        {
+            player1 = collision.gameObject;
+        }
+        else if (collision.gameObject.name == "player2")
+        {
+            player2 = collision.gameObject;
+        }
+
+            
+            StartCoroutine(startnextround(collision.gameObject));
+        GameObject.Find("Canvas").GetComponent<ScoreHandler>().addScore(collision.gameObject);
     }
 
 
@@ -23,11 +34,17 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
         {
             transform.localScale += new Vector3(0.01F, 0.01F, 0);
         }
-        if (player != null && player.transform.localScale.x > 0)
+        if (player1 != null && player1.transform.localScale.x > 0)
         {
-            player.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            player1.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+            player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             
+        }
+        if (player2 != null && player2.transform.localScale.x > 0)
+        {
+            player2.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+            player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         }
 
     }
@@ -50,8 +67,14 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
             Player.transform.localScale = new Vector3(8, 8, 0);
             Player.transform.position = new Vector3(-13, -7.5f, -4.99f);
         }
+        if (Player.name == "player1")
+        {
+            player1 = null;
+        }
+        else if (Player.name == "player2")
+        {
+            player2 = null;
+        }
         Player = null;
-        player = null;
-
     }
 }

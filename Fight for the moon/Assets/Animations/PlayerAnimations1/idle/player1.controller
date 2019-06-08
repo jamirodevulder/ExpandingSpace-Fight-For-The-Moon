@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80b5a96788812f449faf88a9fc3b598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaled: {x: 9.1, y: 9.1, z: 1}
+  scaled: {x: 8.9, y: 8.9, z: 1}
   positiony: 0.2
 --- !u!1101 &1101032829899398542
 AnimatorStateTransition:
