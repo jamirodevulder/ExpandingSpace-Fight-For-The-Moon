@@ -7,7 +7,8 @@ public class Player2MovementScript : MonoBehaviour
     public float speed = 5;
     public float jumpForce = 10;
     private float firstSpeed = 50;
-
+    public float MFM = 25; //Movement Force Multiplier
+    public Rigidbody2D rbP2;
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
@@ -23,13 +24,29 @@ public class Player2MovementScript : MonoBehaviour
         BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
         if (Input.GetKeyDown(KeyCode.DownArrow) && grounded)
         {
-            area.forceMagnitude = 1000f;
+            if (rbP2.velocity.x <= 0f)
+            {
+                area.forceMagnitude = 100f - (rbP2.velocity.x * MFM);
+            }
+            else
+            {
+                area.forceMagnitude = 100f + (rbP2.velocity.x * MFM);
+            }
             animator.SetTrigger("PushGround");
+            Debug.Log(rbP2.velocity.x);
         }
         else if(Input.GetKeyDown(KeyCode.DownArrow) && !grounded)
         {
-            area.forceMagnitude = 1000f;
+            if (rbP2.velocity.x <= 0f)
+            {
+                area.forceMagnitude = 100f - (rbP2.velocity.x * MFM);
+            }
+            else
+            {
+                area.forceMagnitude = 100f + (rbP2.velocity.x * MFM);
+            }
             animator.SetTrigger("PushAir");
+            Debug.Log(rbP2.velocity.x);
         }
         else
         {
