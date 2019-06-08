@@ -684,6 +684,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1395125626831664, guid: 32b4291243d778e44ab81f81a3a0e71c,
     type: 2}
   m_PrefabInternal: {fileID: 891253275}
+--- !u!50 &410786279 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50207931225056620, guid: 32b4291243d778e44ab81f81a3a0e71c,
+    type: 2}
+  m_PrefabInternal: {fileID: 891253275}
 --- !u!4 &410786282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901034611707360, guid: 32b4291243d778e44ab81f81a3a0e71c,
@@ -2016,6 +2021,11 @@ Prefab:
       propertyPath: firstSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114656326953345496, guid: 32b4291243d778e44ab81f81a3a0e71c,
+        type: 2}
+      propertyPath: rbP2
+      value: 
+      objectReference: {fileID: 410786279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
   m_IsPrefabAsset: 0
@@ -2295,6 +2305,11 @@ Prefab:
       propertyPath: firstSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114773107134820518, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: rbP1
+      value: 
+      objectReference: {fileID: 1849096664}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
   m_IsPrefabAsset: 0
@@ -2464,6 +2479,11 @@ CanvasRenderer:
 --- !u!1 &1849096660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1643463289156912, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1446942772}
+--- !u!50 &1849096664 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50786392507970244, guid: 62412e95bffa0df469b7ecd5d7cb6558,
     type: 2}
   m_PrefabInternal: {fileID: 1446942772}
 --- !u!4 &1849096667 stripped
