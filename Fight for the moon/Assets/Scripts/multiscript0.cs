@@ -11,6 +11,7 @@ public class multiscript0 : MonoBehaviour {
     public GameObject ControllScreenObject;
     public GameObject CreditsScreenObject;
     public GameObject backgroundImage;
+    public GameObject LevelScreenObject;
     public Image ControllScreen;
     public Image CreditsScreen;
     public Image MainMenuImage;
@@ -25,7 +26,21 @@ public class multiscript0 : MonoBehaviour {
 	}
     public void StartLevel()
     {
+        MainMenu.SetActive(false);
+        backgroundImage.GetComponent<Image>().sprite = CreditsScreen.sprite;
+        LevelScreenObject.SetActive(true);
+    }
+    public void StartSceneGame()
+    {
         SceneManager.LoadScene("Game");
+    }
+    public void StartSceneSoccerGame()
+    {
+        SceneManager.LoadScene("SoccerGame");
+    }
+    public void StartSceneCombatScene39420()
+    {
+        SceneManager.LoadScene("CombatScene39420");
     }
     public void ToControlls()
     {
@@ -39,8 +54,6 @@ public class multiscript0 : MonoBehaviour {
         MainMenu.SetActive(false);
         backgroundImage.GetComponent<Image>().sprite = CreditsScreen.sprite;
         CreditsScreenObject.SetActive(true);
-
-
     }
     public void BackMainMenu()
     {
