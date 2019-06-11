@@ -917,12 +917,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 723953618}
   tandwiel: {fileID: 2103336256}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
@@ -1318,12 +1320,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 723953618}
   tandwiel: {fileID: 2103336256}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
@@ -2026,6 +2030,11 @@ Prefab:
       propertyPath: rbP2
       value: 
       objectReference: {fileID: 410786279}
+    - target: {fileID: 114656326953345496, guid: 32b4291243d778e44ab81f81a3a0e71c,
+        type: 2}
+      propertyPath: MFM
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
   m_IsPrefabAsset: 0
@@ -2310,6 +2319,11 @@ Prefab:
       propertyPath: rbP1
       value: 
       objectReference: {fileID: 1849096664}
+    - target: {fileID: 114773107134820518, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: MFM
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
   m_IsPrefabAsset: 0
@@ -3216,12 +3230,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 723953618}
   tandwiel: {fileID: 2103336256}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
