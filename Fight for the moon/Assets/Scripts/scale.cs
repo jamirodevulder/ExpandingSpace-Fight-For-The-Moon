@@ -7,7 +7,7 @@ public class scale : StateMachineBehaviour {
     public float positiony;
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        GameObject.Find("player1").transform.localScale = scaled;
+       GameObject.Find("player1").transform.localScale = scaled;
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -17,7 +17,7 @@ public class scale : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        GameObject.Find("player1").transform.position -= new Vector3(0, positiony, 0);
+       GameObject.Find("player1").transform.position -= new Vector3(0, positiony, 0);
         GameObject.Find("player1").transform.localScale = new Vector3(8, 8, 1);
 
 

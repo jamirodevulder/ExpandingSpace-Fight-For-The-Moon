@@ -334,7 +334,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.19
 --- !u!114 &141298669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f72f2706cb9480e4dbdac32467587217, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ed346e820493e6408b3579fe1da55a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -404,7 +404,7 @@ Transform:
   m_GameObject: {fileID: 141298667}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.96, y: 0.3440038, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 809777906}
   m_RootOrder: 1
@@ -682,6 +682,11 @@ CanvasRenderer:
 --- !u!1 &410786275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1395125626831664, guid: 32b4291243d778e44ab81f81a3a0e71c,
+    type: 2}
+  m_PrefabInternal: {fileID: 891253275}
+--- !u!50 &410786279 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50207931225056620, guid: 32b4291243d778e44ab81f81a3a0e71c,
     type: 2}
   m_PrefabInternal: {fileID: 891253275}
 --- !u!4 &410786282 stripped
@@ -1390,7 +1395,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 57e93117032733341b8db9fc14db0570, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c4d08a45bc5f9c40a6908a58872c8a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1409,7 +1414,7 @@ Transform:
   m_GameObject: {fileID: 676619028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.54, y: 0.3440038, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 809777906}
   m_RootOrder: 0
@@ -1428,7 +1433,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.14
 --- !u!1 &687522282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2021,11 @@ Prefab:
       propertyPath: firstSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114656326953345496, guid: 32b4291243d778e44ab81f81a3a0e71c,
+        type: 2}
+      propertyPath: rbP2
+      value: 
+      objectReference: {fileID: 410786279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
   m_IsPrefabAsset: 0
@@ -2295,6 +2305,11 @@ Prefab:
       propertyPath: firstSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114773107134820518, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: rbP1
+      value: 
+      objectReference: {fileID: 1849096664}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
   m_IsPrefabAsset: 0
@@ -2466,6 +2481,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1643463289156912, guid: 62412e95bffa0df469b7ecd5d7cb6558,
     type: 2}
   m_PrefabInternal: {fileID: 1446942772}
+--- !u!50 &1849096664 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50786392507970244, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+    type: 2}
+  m_PrefabInternal: {fileID: 1446942772}
 --- !u!4 &1849096667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558,
@@ -2541,7 +2561,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5a29905188610ee43a0fee511ab8d8f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13a85d8069ecbfb46a5d7e5a9d18caa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2559,8 +2579,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898647540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 1.2, z: 2.37}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0.1, y: 1.1, z: 2.37}
+  m_LocalScale: {x: 7.1, y: 7.9624996, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11

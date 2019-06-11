@@ -20,8 +20,8 @@ public class scale2 : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        GameObject.Find("player2").transform.position -= new Vector3(0, positiony, 0);
-        GameObject.Find("player2").transform.localScale = new Vector3(8, 8, 1);
+       GameObject.Find("player2").transform.position -= new Vector3(0, positiony, 0);
+       GameObject.Find("player2").transform.localScale = new Vector3(8, 8, 1);
 
 
     }
