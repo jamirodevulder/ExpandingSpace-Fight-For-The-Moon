@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class multiscript0 : MonoBehaviour {
     private string[] lvlnames = new string[2];
@@ -21,7 +22,7 @@ public class multiscript0 : MonoBehaviour {
 	void Start () {
         lvlnames[0] = "Game";
         lvlnames[1] = "SoccerGame";
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,6 +46,7 @@ public class multiscript0 : MonoBehaviour {
     public void StartSceneCombatScene39420()
     {
         SceneManager.LoadScene("CombatScene39420");
+        Debug.Log("+Added: HeroBrine");
     }
     public void ToControlls(string lvltoload)
     {
