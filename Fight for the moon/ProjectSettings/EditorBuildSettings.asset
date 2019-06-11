@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SovjetUnieWin.unity
     guid: 7c53ce47fe90b0c40b7bb75f16bf6549
+  - enabled: 1
+    path: Assets/Scenes/SoccerGame.unity
+    guid: 0cd4ea3cbbff0dd4685b4c86c95c11af
   m_configObjects: {}

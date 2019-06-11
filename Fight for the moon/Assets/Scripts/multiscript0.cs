@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class multiscript0 : MonoBehaviour {
+    private string[] lvlnames = new string[2];
+    public string lvl;
      public GameObject pauzescherm;
     public GameObject tandwiel;
     public GameObject MainMenu;
@@ -17,7 +19,8 @@ public class multiscript0 : MonoBehaviour {
     public Image MainMenuImage;
 	// Use this for initialization
 	void Start () {
-		
+        lvlnames[0] = "Game";
+        lvlnames[1] = "SoccerGame";
 	}
 	
 	// Update is called once per frame
@@ -32,22 +35,30 @@ public class multiscript0 : MonoBehaviour {
     }
     public void StartSceneGame()
     {
-        SceneManager.LoadScene("Game");
+        PlayALvl(lvlnames[0]);
     }
     public void StartSceneSoccerGame()
     {
-        SceneManager.LoadScene("SoccerGame");
+        PlayALvl(lvlnames[1]);
+        
     }
     public void StartSceneCombatScene39420()
     {
         SceneManager.LoadScene("CombatScene39420");
     }
-    public void ToControlls()
+    public void ToControlls(string lvltoload)
     {
         MainMenu.SetActive(false);
+        
         backgroundImage.GetComponent<Image>().sprite = ControllScreen.sprite;
         ControllScreenObject.SetActive(true);
-
+        GameObject.Find("lvlHandler").GetComponent<LvLselector>().setLvl(lvltoload);
+        
+    }
+    public void PlayALvl(string lvltoload)
+    {
+        LevelScreenObject.SetActive(false);
+        ToControlls(lvltoload);
     }
     public void StartCredits()
     {
@@ -80,6 +91,19 @@ public class multiscript0 : MonoBehaviour {
         CreditsScreenObject.SetActive(false);
         backgroundImage.GetComponent<Image>().sprite = MainMenuImage.sprite;
         MainMenu.SetActive(true);
+    }
+    public void BackFromLvlSelect()
+    {
+        ControllScreenObject.SetActive(false);
+        LevelScreenObject.SetActive(false);
+        backgroundImage.GetComponent<Image>().sprite = MainMenuImage.sprite;
+        MainMenu.SetActive(true);
+    }
+    public void startGame()
+    {
+        
+        
+        SceneManager.LoadScene(GameObject.Find("lvlHandler").GetComponent<LvLselector>().getlvl());
     }
     public void Exit()
     {
