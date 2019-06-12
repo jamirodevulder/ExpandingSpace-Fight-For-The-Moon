@@ -58,15 +58,13 @@ public class GoalBlackHoleP1 : MonoBehaviour {
         }
         if (player1 != null && player1.transform.localScale.x > 0)
         {
-            player1.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+        //    player1.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
             player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
         }
         if (player2 != null && player2.transform.localScale.x > 0)
         {
-            player2.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
+        //    player2.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
             player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
         }
     }
 
@@ -74,23 +72,26 @@ public class GoalBlackHoleP1 : MonoBehaviour {
     IEnumerator startnextround(GameObject Player)
     {
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         if (Player.name == "player2")
         {
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             Player.transform.localScale = new Vector3(8, 8, 0);
+            Player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1);
             Player.transform.position = new Vector3(13, -7.5f, -4.99f);
         }
         else if(Player.name == "player1")
         {
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             Player.transform.localScale = new Vector3(8, 8, 0);
+            Player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1);
             Player.transform.position = new Vector3(-13, -7.5f, -4.99f);
         }
         else if(Player.name == "ball")
         {
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             Player.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            Player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1);
             Player.transform.position = ballposition;
         }
         if (Player.name == "player1")

@@ -80,6 +80,7 @@ public class Player1MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
+            GetComponent<SpriteRenderer>().flipX = true;
             if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
@@ -88,6 +89,7 @@ public class Player1MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
+            GetComponent<SpriteRenderer>().flipX = false;
             if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
@@ -114,14 +116,11 @@ public class Player1MovementScript : MonoBehaviour
         if (collision.gameObject.tag == "blackhole")
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            for (int i = 0; i < 25; i++)
-            {
-                Transparency = Transparency - 0.01f;
-                GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency);
-                Debug.Log(Transparency);
-            }
+            Transparency = 1;
+            StartCoroutine(DelayLoop());
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -129,6 +128,17 @@ public class Player1MovementScript : MonoBehaviour
             //Debug.Log("Exit ground!");
             grounded = false;
             animator.SetBool("Jump", true);
+        }
+    }
+
+    IEnumerator DelayLoop()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            Transparency = Transparency - 0.01f;
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency);
+            Debug.Log(Transparency);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
