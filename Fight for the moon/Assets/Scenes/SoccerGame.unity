@@ -2183,7 +2183,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1358544225}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8fb810d10b9c6ef4ea028efa3885e188, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2436,15 +2436,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 605287474}
   tandwiel: {fileID: 1789167160}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
+  lvlscreens: {fileID: 0}
 --- !u!114 &1591939690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2769,7 +2772,7 @@ Prefab:
     - target: {fileID: 114656326953345496, guid: 32b4291243d778e44ab81f81a3a0e71c,
         type: 2}
       propertyPath: MFM
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
@@ -3057,15 +3060,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 605287474}
   tandwiel: {fileID: 1789167160}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
+  lvlscreens: {fileID: 0}
 --- !u!114 &1789167163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3660,7 +3666,7 @@ Prefab:
     - target: {fileID: 114773107134820518, guid: 62412e95bffa0df469b7ecd5d7cb6558,
         type: 2}
       propertyPath: MFM
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
@@ -3713,15 +3719,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 605287474}
   tandwiel: {fileID: 1789167160}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
+  lvlscreens: {fileID: 0}
 --- !u!114 &2007711516
 MonoBehaviour:
   m_ObjectHideFlags: 0

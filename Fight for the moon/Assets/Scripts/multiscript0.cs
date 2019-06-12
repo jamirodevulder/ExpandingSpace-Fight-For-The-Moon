@@ -18,6 +18,8 @@ public class multiscript0 : MonoBehaviour {
     public Image ControllScreen;
     public Image CreditsScreen;
     public Image MainMenuImage;
+    public Image lvlscreens;
+
 	// Use this for initialization
 	void Start () {
         lvlnames[0] = "Game";
@@ -31,7 +33,7 @@ public class multiscript0 : MonoBehaviour {
     public void StartLevel()
     {
         MainMenu.SetActive(false);
-        backgroundImage.GetComponent<Image>().sprite = CreditsScreen.sprite;
+        backgroundImage.GetComponent<Image>().sprite = lvlscreens.sprite;
         LevelScreenObject.SetActive(true);
     }
     public void StartSceneGame()
