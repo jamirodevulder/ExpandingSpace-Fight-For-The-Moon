@@ -13,11 +13,6 @@ public class Player1MovementScript : MonoBehaviour
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
-    WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.01f);
-    IEnumerator timer()
-    {
-        yield return new WaitForSecondsRealtime(0.01f);
-    }
 
     // Use this for initialization
     void Start()
@@ -119,11 +114,11 @@ public class Player1MovementScript : MonoBehaviour
         if (collision.gameObject.tag == "blackhole")
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 25; i++)
             {
-                GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency - 0.01f);
+                Transparency = Transparency - 0.01f;
+                GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency);
                 Debug.Log(Transparency);
-                StartCoroutine(timer());
             }
         }
     }
