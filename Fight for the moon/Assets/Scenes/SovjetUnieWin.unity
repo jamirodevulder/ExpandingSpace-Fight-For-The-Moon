@@ -274,7 +274,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &158722544
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -831,8 +831,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 0}
   tandwiel: {fileID: 0}
+  MainMenu: {fileID: 0}
+  ControllScreenObject: {fileID: 0}
+  CreditsScreenObject: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
+  ControllScreen: {fileID: 0}
+  CreditsScreen: {fileID: 0}
+  MainMenuImage: {fileID: 0}
 --- !u!1 &1954175323
 GameObject:
   m_ObjectHideFlags: 0
