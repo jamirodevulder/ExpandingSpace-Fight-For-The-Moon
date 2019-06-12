@@ -30,22 +30,22 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
 
     private void Update()
     {
-        if(transform.localScale.x < 1 && transform.localScale.y < 1)
-        {
-            transform.localScale += new Vector3(0.01F, 0.01F, 0);
-        }
-        if (player1 != null && player1.transform.localScale.x > 0)
-        {
-            player1.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
-            player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        //if(transform.localScale.x < 1 && transform.localScale.y < 1)
+        //{
+        //    transform.localScale += new Vector3(0.01f, 0.01f, 0);
+        //}
+        //if (player1 != null && player1.transform.localScale.x > 0)
+        //{
+        //    player1.transform.localScale -= new Vector3(0.1f, 0.1f, 0);
+        //    player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             
-        }
-        if (player2 != null && player2.transform.localScale.x > 0)
-        {
-            player2.transform.localScale -= new Vector3(0.1F, 0.1F, 0);
-            player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        //}
+        //if (player2 != null && player2.transform.localScale.x > 0)
+        //{
+        //    player2.transform.localScale -= new Vector3(0.1f, 0.1f, 0);
+        //    player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
-        }
+        //}
 
     }
 
@@ -54,7 +54,7 @@ public class CheckPlayerWhoDiedScript : MonoBehaviour {
     IEnumerator startnextround(GameObject Player)
     {
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         if (Player.name == "player2")
         {
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;

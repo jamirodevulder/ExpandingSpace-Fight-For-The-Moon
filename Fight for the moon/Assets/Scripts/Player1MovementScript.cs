@@ -1,24 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player1MovementScript : MonoBehaviour
 {
-    public float speed = 5;
-    public float jumpForce = 10;
-    private float firstSpeed = 50;
-    public float MFM = 25; //Movement Force Multiplier
+    public float speed = 5f;
+    public float jumpForce = 10f;
+    private float firstSpeed = 50f; //Character quickly accelerates to a minimum speed when moving
+    public float MFM = 25f; //Movement Force Multiplier
+    private float Transparency = 1f;
     public Rigidbody2D rbP1;
     bool grounded;
     private Animator animator;
     public GameObject landAnimation;
+    WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.01f);
+    IEnumerator timer()
+    {
+        yield return new WaitForSecondsRealtime(0.01f);
+    }
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
-       
     }
 
     private void Update()
@@ -29,11 +33,11 @@ public class Player1MovementScript : MonoBehaviour
         {
             if (rbP1.velocity.x <= 0f)
             {
-                area.forceMagnitude = 100f - (rbP1.velocity.x * MFM);
+                area.forceMagnitude = 1000f - (rbP1.velocity.x * MFM);
             }
             else
             {
-                area.forceMagnitude = 100f + (rbP1.velocity.x * MFM);
+                area.forceMagnitude = 1000f + (rbP1.velocity.x * MFM);
             }
             animator.SetTrigger("PushGround");
             Debug.Log(rbP1.velocity.x);
@@ -42,11 +46,11 @@ public class Player1MovementScript : MonoBehaviour
         {
             if (rbP1.velocity.x <= 0f)
             {
-                area.forceMagnitude = 100f - (rbP1.velocity.x * MFM);
+                area.forceMagnitude = 1000f - (rbP1.velocity.x * MFM);
             }
             else
             {
-                area.forceMagnitude = 100f + (rbP1.velocity.x * MFM);
+                area.forceMagnitude = 1000f + (rbP1.velocity.x * MFM);
             }
             animator.SetTrigger("PushAir");
             Debug.Log(rbP1.velocity.x);
@@ -55,7 +59,6 @@ public class Player1MovementScript : MonoBehaviour
         {
             area.forceMagnitude = 0f;
         }
-
         if (Input.GetKey(KeyCode.A))
         {
             area.forceAngle = 135f;
@@ -70,13 +73,10 @@ public class Player1MovementScript : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             animator.SetBool("Walk", true);
         }
-
-
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             animator.SetBool("Walk", false);
         }
-      
     }
 
     // Update is called once per frame
@@ -104,8 +104,6 @@ public class Player1MovementScript : MonoBehaviour
             grounded = false;
             animator.SetBool("Jump", true);
         }
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -118,6 +116,16 @@ public class Player1MovementScript : MonoBehaviour
             landAnimation.SetActive(true);
             landAnimation.GetComponent<Animator>().SetTrigger("Hitground");
         }
+        if (collision.gameObject.tag == "blackhole")
+        {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            for (int i = 0; i < 100; i++)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency - 0.01f);
+                Debug.Log(Transparency);
+                StartCoroutine(timer());
+            }
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -126,13 +134,8 @@ public class Player1MovementScript : MonoBehaviour
             //Debug.Log("Exit ground!");
             grounded = false;
             animator.SetBool("Jump", true);
-           
-            
         }
-        
     }
-    
-    
 }
 //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 //transform.position -= new Vector3(+speed, 0, 0) * Time.deltaTime;
