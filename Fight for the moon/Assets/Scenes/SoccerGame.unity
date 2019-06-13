@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74948c11d3fa5174581b74bb1b4fcd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalespeed: 0.005
+  scalespeed: 0.1
   ballposition: {x: 6, y: 8.6, z: -3.64}
 --- !u!82 &36665551
 AudioSource:
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74948c11d3fa5174581b74bb1b4fcd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalespeed: 0.005
+  scalespeed: 0.1
   ballposition: {x: -5.88, y: 8.6, z: -3.64}
 --- !u!58 &588092336
 CircleCollider2D:
@@ -2183,13 +2183,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 1358544225}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8fb810d10b9c6ef4ea028efa3885e188, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 0.12
 --- !u!212 &1358544228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2225,7 +2225,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b1ff492b7f628541961473ce71c6297, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 178c9d0d44c52c74d92398f9a625e07c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2244,7 +2244,7 @@ Transform:
   m_GameObject: {fileID: 1358544225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8.6, z: -3.64}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 6, y: 6, z: 0.5}
   m_Children:
   - {fileID: 265732106}
   m_Father: {fileID: 0}
@@ -2436,15 +2436,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 605287474}
   tandwiel: {fileID: 1789167160}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
+  lvlscreens: {fileID: 0}
 --- !u!114 &1591939690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2769,7 +2772,7 @@ Prefab:
     - target: {fileID: 114656326953345496, guid: 32b4291243d778e44ab81f81a3a0e71c,
         type: 2}
       propertyPath: MFM
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}
@@ -3057,15 +3060,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 605287474}
   tandwiel: {fileID: 1789167160}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
+  lvlscreens: {fileID: 0}
 --- !u!114 &1789167163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3148,7 +3154,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1cea41d6142a7ee408cf5869b57b149a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6831c349edec47b45b4aa3b27bffb16f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3523,11 +3529,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -11.22
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.46
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3660,7 +3666,7 @@ Prefab:
     - target: {fileID: 114773107134820518, guid: 62412e95bffa0df469b7ecd5d7cb6558,
         type: 2}
       propertyPath: MFM
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
@@ -3713,15 +3719,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3fe57c64d95b740a9c02a466e3378e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl: 
   pauzescherm: {fileID: 605287474}
   tandwiel: {fileID: 1789167160}
   MainMenu: {fileID: 0}
   ControllScreenObject: {fileID: 0}
   CreditsScreenObject: {fileID: 0}
   backgroundImage: {fileID: 0}
+  LevelScreenObject: {fileID: 0}
   ControllScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
   MainMenuImage: {fileID: 0}
+  lvlscreens: {fileID: 0}
 --- !u!114 &2007711516
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,10 +51,11 @@ public class GoalBlackHoleP1 : MonoBehaviour {
         {
             transform.localScale += new Vector3(0.01F, 0.01F, 0);
         }
-        if (player != null && player.transform.localScale.x > 0 && player.name == "ball")
+        if (ball != null && ball.transform.localScale.x > 0 && ball.name == "ball")
         {
-            player.transform.localScale -= new Vector3(scalespeed, scalespeed, 0);
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            
+            ball.transform.localScale -= new Vector3(scalespeed, scalespeed, 0);
+            ball.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
         if (player1 != null && player1.transform.localScale.x > 0)
         {
