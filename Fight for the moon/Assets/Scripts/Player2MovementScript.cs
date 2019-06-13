@@ -26,11 +26,11 @@ public class Player2MovementScript : MonoBehaviour
         {
             if (rbP2.velocity.x <= 0f)
             {
-                area.forceMagnitude = 100f - (rbP2.velocity.x * MFM);
+                area.forceMagnitude = 1000f - (rbP2.velocity.x * MFM);
             }
             else
             {
-                area.forceMagnitude = 100f + (rbP2.velocity.x * MFM);
+                area.forceMagnitude = 1000f + (rbP2.velocity.x * MFM);
             }
             animator.SetTrigger("PushGround");
             Debug.Log(rbP2.velocity.x);
@@ -39,11 +39,11 @@ public class Player2MovementScript : MonoBehaviour
         {
             if (rbP2.velocity.x <= 0f)
             {
-                area.forceMagnitude = 100f - (rbP2.velocity.x * MFM);
+                area.forceMagnitude = 1000f - (rbP2.velocity.x * MFM);
             }
             else
             {
-                area.forceMagnitude = 100f + (rbP2.velocity.x * MFM);
+                area.forceMagnitude = 1000f + (rbP2.velocity.x * MFM);
             }
             animator.SetTrigger("PushAir");
             Debug.Log(rbP2.velocity.x);
