@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74948c11d3fa5174581b74bb1b4fcd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalespeed: 0.005
+  scalespeed: 0.1
   ballposition: {x: 6, y: 8.6, z: -3.64}
 --- !u!82 &36665551
 AudioSource:
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74948c11d3fa5174581b74bb1b4fcd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalespeed: 0.005
+  scalespeed: 0.1
   ballposition: {x: -5.88, y: 8.6, z: -3.64}
 --- !u!58 &588092336
 CircleCollider2D:
@@ -2189,7 +2189,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 0.12
 --- !u!212 &1358544228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2225,7 +2225,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b1ff492b7f628541961473ce71c6297, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 178c9d0d44c52c74d92398f9a625e07c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2244,7 +2244,7 @@ Transform:
   m_GameObject: {fileID: 1358544225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8.6, z: -3.64}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 6, y: 6, z: 0.5}
   m_Children:
   - {fileID: 265732106}
   m_Father: {fileID: 0}
@@ -3529,11 +3529,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -11.22
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.46
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4711921931427398, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
       propertyPath: m_LocalPosition.z

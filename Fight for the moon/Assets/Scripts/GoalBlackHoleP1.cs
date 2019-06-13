@@ -91,7 +91,7 @@ public class GoalBlackHoleP1 : MonoBehaviour {
         else if(Player.name == "ball")
         {
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Player.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+            Player.transform.localScale = new Vector3(6f, 6f, 0);
             Player.transform.position = ballposition;
         }
         if (Player.name == "player1")
