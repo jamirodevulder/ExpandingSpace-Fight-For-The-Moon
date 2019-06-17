@@ -12,7 +12,7 @@ public class GoalBlackHoleP1 : MonoBehaviour {
     private GameObject player2;
     private GameObject ball;
     private float Transparency = 1f;
-    // Use this for initialization
+   
     void Start () {
 		
 	}
