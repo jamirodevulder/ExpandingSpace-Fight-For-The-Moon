@@ -8,7 +8,7 @@ public class Player2MovementScript : MonoBehaviour
     public float jumpForce = 10f;
     private float firstSpeed = 50f; //Character quickly accelerates to a minimum speed when moving
     public float MFM = 25f; //Movement Force Multiplier
-    private float Transparency = 1f;
+    private float Transparency = 0f;
     public Rigidbody2D rbP2;
     bool grounded;
     private Animator animator;
@@ -17,9 +17,18 @@ public class Player2MovementScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, Transparency);
         animator = GetComponent<Animator>();
-	}
-
+        StartCoroutine(transparenceInitializationTimer());
+    }
+    IEnumerator transparenceInitializationTimer()
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+        StartCoroutine(DelayLoop(0.01f));
+    }
     private void Update()
     {
         AreaEffector2D area = GetComponent<AreaEffector2D>();
@@ -117,7 +126,7 @@ public class Player2MovementScript : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             Transparency = 1;
-            StartCoroutine(DelayLoop());
+            StartCoroutine(DelayLoop(-0.01f));
         }
     }
 
@@ -131,11 +140,11 @@ public class Player2MovementScript : MonoBehaviour
         }
     }
 
-    IEnumerator DelayLoop()
+    IEnumerator DelayLoop(float value)
     {
         for (int i = 0; i < 100; i++)
         {
-            Transparency = Transparency - 0.01f;
+            Transparency = Transparency + value;
             GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency);
             Debug.Log(Transparency);
             yield return new WaitForSeconds(0.01f);
