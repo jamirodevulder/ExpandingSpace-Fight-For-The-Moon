@@ -468,6 +468,21 @@ Prefab:
       propertyPath: MFM
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 249840263994513222, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: m_UseColliderMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50786392507970244, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50786392507970244, guid: 62412e95bffa0df469b7ecd5d7cb6558,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62412e95bffa0df469b7ecd5d7cb6558, type: 2}
   m_IsPrefabAsset: 0
@@ -1897,6 +1912,21 @@ Prefab:
         type: 2}
       propertyPath: MFM
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50207931225056620, guid: 32b4291243d778e44ab81f81a3a0e71c,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50207931225056620, guid: 32b4291243d778e44ab81f81a3a0e71c,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70164205479301866, guid: 32b4291243d778e44ab81f81a3a0e71c,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b4291243d778e44ab81f81a3a0e71c, type: 2}

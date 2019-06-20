@@ -31,6 +31,30 @@ public class Player2MovementScript : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
+            GetComponent<SpriteRenderer>().flipX = true;
+            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
+            }
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
+            GetComponent<SpriteRenderer>().flipX = false;
+            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            grounded = false;
+            animator.SetBool("Jump", true);
+        }
         AreaEffector2D area = GetComponent<AreaEffector2D>();
         BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
         if (Input.GetKeyDown(KeyCode.DownArrow) && grounded)
@@ -84,33 +108,6 @@ public class Player2MovementScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate ()
-    {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
-            GetComponent<SpriteRenderer>().flipX = true;
-            if(GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
-            {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
-            }
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
-            GetComponent<SpriteRenderer>().flipX = false;
-            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
-            {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
-        {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            grounded = false;
-            animator.SetBool("Jump", true);
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
