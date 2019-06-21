@@ -31,30 +31,6 @@ public class Player2MovementScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
-            GetComponent<SpriteRenderer>().flipX = true;
-            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
-            {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
-            }
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
-            GetComponent<SpriteRenderer>().flipX = false;
-            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
-            {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
-        {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            grounded = false;
-            animator.SetBool("Jump", true);
-        }
         AreaEffector2D area = GetComponent<AreaEffector2D>();
         BoxCollider2D pushCollider = GetComponent<BoxCollider2D>();
         if (Input.GetKeyDown(KeyCode.DownArrow) && grounded)
@@ -93,6 +69,12 @@ public class Player2MovementScript : MonoBehaviour
             pushCollider.offset = new Vector2(-0.1f, 0f);
             GetComponent<SpriteRenderer>().flipX = false;
             animator.SetBool("Walk", true);
+            GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
+            GetComponent<SpriteRenderer>().flipX = false;
+            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -100,8 +82,20 @@ public class Player2MovementScript : MonoBehaviour
             pushCollider.offset = new Vector2(0.1f, 0f);
             GetComponent<SpriteRenderer>().flipX = true;
             animator.SetBool("Walk", true);
+            GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
+            GetComponent<SpriteRenderer>().flipX = true;
+            if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
+            }
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow) )
+        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            grounded = false;
+            animator.SetBool("Jump", true);
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow) )
         {
             animator.SetBool("Walk", false);
         }
