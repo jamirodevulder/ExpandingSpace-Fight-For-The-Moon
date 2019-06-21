@@ -141,6 +141,16 @@ public class Player2MovementScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            //Debug.Log("Touch ground!");
+            grounded = true;
+            animator.SetBool("Jump", false);
+          
+        }
+    }
 }
 //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 //transform.position -= new Vector3(+speed, 0, 0) * Time.deltaTime;
