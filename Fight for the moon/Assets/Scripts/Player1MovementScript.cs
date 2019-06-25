@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player1MovementScript : MonoBehaviour
 {
-    public float speed = 5;
-    public float jumpForce = 10;
-    private float firstSpeed = 50;
-    public float MFM = 25; //Movement Force Multiplier
+    public float speed = 5f;
+    public float jumpForce = 10f;
+    private float firstSpeed = 50f; //Character quickly accelerates to a minimum speed when moving
+    public float MFM = 25f; //Movement Force Multiplier
+    private float Transparency = 1f;
     public Rigidbody2D rbP1;
     bool grounded;
     private Animator animator;
@@ -18,7 +18,6 @@ public class Player1MovementScript : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-       
     }
 
     private void Update()
@@ -55,7 +54,6 @@ public class Player1MovementScript : MonoBehaviour
         {
             area.forceMagnitude = 0f;
         }
-
         if (Input.GetKey(KeyCode.A))
         {
             area.forceAngle = 135f;
@@ -70,13 +68,10 @@ public class Player1MovementScript : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             animator.SetBool("Walk", true);
         }
-
-
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             animator.SetBool("Walk", false);
         }
-      
     }
 
     // Update is called once per frame
@@ -85,6 +80,7 @@ public class Player1MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
+            GetComponent<SpriteRenderer>().flipX = true;
             if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * firstSpeed);
@@ -93,6 +89,7 @@ public class Player1MovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             GetComponent<Rigidbody2D>().AddForce(transform.right * -speed);
+            GetComponent<SpriteRenderer>().flipX = false;
             if (GetComponent<Rigidbody2D>().velocity.magnitude < 2f)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * -firstSpeed);
@@ -104,8 +101,6 @@ public class Player1MovementScript : MonoBehaviour
             grounded = false;
             animator.SetBool("Jump", true);
         }
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -118,7 +113,14 @@ public class Player1MovementScript : MonoBehaviour
             landAnimation.SetActive(true);
             landAnimation.GetComponent<Animator>().SetTrigger("Hitground");
         }
+        if (collision.gameObject.tag == "blackhole")
+        {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            Transparency = 1;
+            StartCoroutine(DelayLoop());
+        }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -126,13 +128,19 @@ public class Player1MovementScript : MonoBehaviour
             //Debug.Log("Exit ground!");
             grounded = false;
             animator.SetBool("Jump", true);
-           
-            
         }
-        
     }
-    
-    
+
+    IEnumerator DelayLoop()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            Transparency = Transparency - 0.01f;
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Transparency);
+            Debug.Log(Transparency);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 }
 //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 //transform.position -= new Vector3(+speed, 0, 0) * Time.deltaTime;
